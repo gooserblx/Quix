@@ -3,6 +3,34 @@ local Window = Library.CreateLib("Walk 50,000 studs for nothing. - QuixHub", "Oc
 local Main = Window:NewTab("Main")
 local MainSection = Main:NewSection("Main")
 	
+UniversalSection:NewSlider("Walk Speed", "Will change your walkspeed.", 500, 1, function(s) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+	end)
+	UniversalSection:NewSlider("Jump Power", "Will change your JumpPower.", 500, 1, function(j) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
+	end)
+	_G.infinjump = false
+
+	local Player = game:GetService("Players").LocalPlayer
+	local Mouse = Player:GetMouse()
+	Mouse.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+				local Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+				Humanoid:ChangeState("Jumping")
+				wait(0.1)
+				Humanoid:ChangeState("Seated")
+			end
+		end
+	end)
+	
+	UniversalSection:NewToggle("Infinite Jump", "Lets you fly by jumping.", function(state)
+		if state then
+			_G.infinjump = true
+		else
+			_G.infinjump = false
+		end
+	end)
 	
 	MainSection:NewButton("Teleport To End", "Title explains it.", function()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(16.0848255, 6.14999723, -49984.125, 0.976191401, 8.62092548e-08, -0.216910809, -9.71387664e-08, 1, -3.97249522e-08, 0.216910809, 5.98496044e-08, 0.976191401)
