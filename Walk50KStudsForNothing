@@ -2,6 +2,8 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("Walk 50,000 studs for nothing. - QuixHub", "Ocean")
 local Main = Window:NewTab("Main")
 local MainSection = Main:NewSection("Main")
+local Universal = Window:NewTab("Universal")
+local UniversalSection = Universal:NewSection("Universal")
 	
 UniversalSection:NewSlider("Walk Speed", "Will change your walkspeed.", 500, 1, function(s) -- 500 (MaxValue) | 0 (MinValue)
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
