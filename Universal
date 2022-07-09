@@ -48,6 +48,11 @@ local UniversalSection = Universal:NewSection("Universal")
 	ScriptsSection:NewLabel("Level 7 Scripts (wont work with quix)")
 	ScriptsSection:NewButton("Eclipse Hub", "Will open Eclipse Hub.", function()
 		getgenv().mainKey = "nil"
-
+	end)
 		local a,b,c,d,e=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,tostring,"https://api.eclipsehub.xyz/auth"c(a and b,"Executor not Supported")a(b({Url=e.."\?\107e\121\61"..d(mainKey),Headers={["User-Agent"]="Eclipse"}}).Body)()
-end)
+	
+	ScriptsSection:NewButton("Dark Dex", "Will open Dark Dex.", function()
+		loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
+	end)
+
+
