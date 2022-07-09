@@ -6,10 +6,59 @@ if game.PlaceId == 7009987220 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/gooserblx/Quix/main/RagdollStack"))()
 end
 
-if game.PlaceId == not 7009987220 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/gooserblx/Quix/main/Universal"))()
-end
+if game.PlaceId == not 7009987220 or 8603729161 then
 
-if game.PlaceId == not 8603729161 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/gooserblx/Quix/main/Universal"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Walk 50,000 studs for nothing. - QuixHub", "Ocean")
+local Universal = Window:NewTab("Universal")
+local UniversalSection = Universal:NewSection("Universal")
+	UniversalSection:NewSlider("Walk Speed", "Will change your walkspeed.", 500, 1, function(s) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+	end)
+	UniversalSection:NewSlider("Jump Power", "Will change your JumpPower.", 500, 1, function(j) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
+	end)
+	_G.infinjump = false
+
+	local Player = game:GetService("Players").LocalPlayer
+	local Mouse = Player:GetMouse()
+	Mouse.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+				local Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+				Humanoid:ChangeState("Jumping")
+				wait(0.1)
+				Humanoid:ChangeState("Seated")
+			end
+		end
+	end)
+	
+	UniversalSection:NewToggle("Infinite Jump", "Lets you fly by jumping.", function(state)
+		if state then
+			_G.infinjump = true
+		else
+			_G.infinjump = false
+		end
+	end)
+-- Scripts Panel
+	local Scripts = Window:NewTab("Scripts")
+	local ScriptsSection = Scripts:NewSection("Scripts")
+	ScriptsSection:NewButton("InfYield", "Will open Infinite Yield.", function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+	end)
+	ScriptsSection:NewButton("OwlHub", "Will open Owl Hub.", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ZinityDrops/OwlHubLink/master/OwlHubBack.lua"))();
+	end)
+	ScriptsSection:NewButton("Arsenal Script", "Will open an Arsenal GUI.", function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/pMabTVqL'))()
+	end)
+	ScriptsSection:NewButton("MM2 Script", "Will open an Murder Mystery Hub.", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Doggo-cryto/EclipseMM2/master/Script", true))()
+	end)
+	ScriptsSection:NewLabel("Level 7 Scripts (wont work with quix)")
+	ScriptsSection:NewButton("Eclipse Hub", "Will open Eclipse Hub.", function()
+		getgenv().mainKey = "nil"
+
+		local a,b,c,d,e=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,tostring,"https://api.eclipsehub.xyz/auth"c(a and b,"Executor not Supported")a(b({Url=e.."\?\107e\121\61"..d(mainKey),Headers={["User-Agent"]="Eclipse"}}).Body)()
+	end)
 end
