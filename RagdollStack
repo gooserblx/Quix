@@ -1,138 +1,44 @@
-local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local UICorner = Instance.new("UICorner")
-local TextLabel_2 = Instance.new("TextLabel")
-local UICorner_2 = Instance.new("UICorner")
-local UICorner_3 = Instance.new("UICorner")
-local TextLabel_3 = Instance.new("TextLabel")
-local UICorner_4 = Instance.new("UICorner")
-
---Properties:
-
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.BackgroundTransparency = 0.500
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.0697569549, 0, 0.701634765, 0)
-Frame.Size = UDim2.new(0, 284, 0, 160)
-
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 0.500
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.123239443, 0, 0.0800403208, 0)
-TextLabel.Size = UDim2.new(0, 213, 0, 50)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Autofarm starting soon!"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
-
-UICorner.Parent = TextLabel
-
-TextLabel_2.Parent = Frame
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 0.500
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.123239435, 0, 0.444556445, 0)
-TextLabel_2.Size = UDim2.new(0, 213, 0, 41)
-TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "gui is shutting in 10 seconds"
-TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextWrapped = true
-
-UICorner_2.Parent = TextLabel_2
-
-UICorner_3.Parent = Frame
-
-TextLabel_3.Parent = Frame
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.BackgroundTransparency = 0.500
-TextLabel_3.BorderSizePixel = 0
-TextLabel_3.Position = UDim2.new(0.123239435, 0, 0.763306499, 0)
-TextLabel_3.Size = UDim2.new(0, 213, 0, 24)
-TextLabel_3.Font = Enum.Font.SourceSans
-TextLabel_3.Text = "this gui is equiped with anti afk kick :)"
-TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
-
-UICorner_4.Parent = TextLabel_3
-
--- Scripts:
-
-local function KHZYVHH_fake_script() -- Frame.LocalScript 
-	local script = Instance.new('LocalScript', Frame)
-
-	wait(9)
-	script.Parent.Parent.Enabled = false
-	wait(3)
-	script.Parent.Parent:Destroy()
-end
-coroutine.wrap(KHZYVHH_fake_script)()
-local function XVZULF_fake_script() -- Frame.Autofarm Script 
-	local script = Instance.new('LocalScript', Frame)
-    wait(10)
-	for count = 1,math.huge do
-		local pos = game.Players.LocalPlayer.Character.HumanoidRootPart
-		pos.CFrame = CFrame.new(19.3754845, 4.0545454, 137.381378, 0.998906672, 8.08342477e-08, 0.0467488095, -8.1089361e-08, 1, 3.56077678e-09, -0.0467488095, -7.34771488e-09, 0.998906672)
-		wait(0.1)
-		pos.CFrame = CFrame.new(19.6615791, 4.0545454, 98.0274734, 0.999973595, 9.03190625e-08, -0.00726736104, -9.03433275e-08, 1, -3.0107401e-09, 0.00726736104, 3.66721808e-09, 0.999973595)
-		wait(0.1)
-		pos.CFrame = CFrame.new(19.616148, 4.0545454, 57.0178146, 0.61408937, -5.24682697e-08, 0.789236486, 6.56323849e-08, 1, 1.54125139e-08, -0.789236486, 4.23348112e-08, 0.61408937)
-		wait(0.1)
-		pos.CFrame = CFrame.new(19.278553, 4.0545454, 17.5781403, 0.999703705, -5.28244719e-08, -0.0243406743, 5.28881614e-08, 1, 1.97280881e-09, 0.0243406743, -3.25955773e-09, 0.999703705)
-		wait(0.1)
-		pos.CFrame = CFrame.new(17.9421787, 4.0545454, -22.871954, 0.833403647, -5.25638804e-08, 0.552664816, 7.0266859e-09, 1, 8.45138217e-08, -0.552664816, -6.65507258e-08, 0.833403647)
-		wait(0.1)
-		pos.CFrame = CFrame.new(18.0790462, 4.0545454, -62.863163, 0.838907301, -4.05326936e-08, 0.544274271, 2.60941002e-09, 1, 7.04491185e-08, -0.544274271, -5.76800439e-08, 0.838907301)
-		wait(0.1)
-		pos.CFrame = CFrame.new(18.241024, 4.0545454, -102.574257, 0.528542697, -5.99462808e-08, -0.848906696, -5.28954081e-09, 1, -7.3909213e-08, 0.848906696, 4.3554504e-08, 0.528542697)
-		wait(0.1)
-		pos.CFrame = CFrame.new(19.5745869, 4.0545454, -142.167496, -0.648737133, 2.11879247e-09, -0.761012554, -2.50187027e-09, 1, 4.91693442e-09, 0.761012554, 5.09375253e-09, -0.648737133)
-		wait(0.1)
-		pos.CFrame = CFrame.new(19.9818592, 4.05454826, -182.815247, 0.990836978, -2.28092567e-08, -0.13506341, 2.49467913e-08, 1, 1.41337022e-08, 0.13506341, -1.73735941e-08, 0.990836978)
-		wait(0.1)
-		pos.CFrame = CFrame.new(17.0742168, 3.95454717, -223.347626, -0.490675569, -4.4979938e-08, 0.871342361, -2.72736411e-08, 1, 3.62629322e-08, -0.871342361, -5.9713452e-09, -0.490675569)
-		wait(0.1)
-		pos.CFrame = CFrame.new(16.7769508, 22.0335026, -257.314819, -0.305279166, 0.497483373, -0.811982095, -6.41613696e-09, 0.852686882, 0.522422314, 0.952262878, 0.159484655, -0.26030755)
-		wait(1)
-		game.Players.LocalPlayer.Character.Humanoid.Health = 0
-		wait(3)
-		game.Players.LocalPlayer.Character.Humanoid.Health = 0
-		wait(3)
-		game.Players.LocalPlayer.Character.Humanoid.Health = 0
-		wait(3)
-		game.Players.LocalPlayer.Character.Humanoid.Health = 0
-		wait(3)
-	end
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Ragdoll Stack! - QuixHub", "Ocean")
 	
-end
-coroutine.wrap(XVZULF_fake_script)()
-local function GFQTS_fake_script() -- Frame.Basic_Anti_AFK_Script 
-	local script = Instance.new('LocalScript', Frame)
-
-	-- Basic Anti AFK System
-	-- Coded by DeveloperStillstew
-	local VirtualUser = game:GetService("VirtualUser")
-	local Players = game:GetService("Players")
-	
-	Players.LocalPlayer.Idled:Connect(function()
-		--[[
-		Makes the game think you clicked something that is inside the game,
-		Such as a button
-		]]
-		VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
-		wait(1)
-		-- Makes the game think you stopped clicking an object that is in the game.
-		VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+-- main stuff	
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+MainSection:NewSlider("Walk Speed", "Changes your walk speed.", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+MainSection:NewButton("Autofarm", "Autofarm with anti-afk!", function()
+		for count = 1,math.huge do
+			local pos = game.Players.LocalPlayer.Character.HumanoidRootPart
+			pos.CFrame = CFrame.new(19.3754845, 4.0545454, 137.381378, 0.998906672, 8.08342477e-08, 0.0467488095, -8.1089361e-08, 1, 3.56077678e-09, -0.0467488095, -7.34771488e-09, 0.998906672)
+			wait(0.1)
+			pos.CFrame = CFrame.new(19.6615791, 4.0545454, 98.0274734, 0.999973595, 9.03190625e-08, -0.00726736104, -9.03433275e-08, 1, -3.0107401e-09, 0.00726736104, 3.66721808e-09, 0.999973595)
+			wait(0.1)
+			pos.CFrame = CFrame.new(19.616148, 4.0545454, 57.0178146, 0.61408937, -5.24682697e-08, 0.789236486, 6.56323849e-08, 1, 1.54125139e-08, -0.789236486, 4.23348112e-08, 0.61408937)
+			wait(0.1)
+			pos.CFrame = CFrame.new(19.278553, 4.0545454, 17.5781403, 0.999703705, -5.28244719e-08, -0.0243406743, 5.28881614e-08, 1, 1.97280881e-09, 0.0243406743, -3.25955773e-09, 0.999703705)
+			wait(0.1)
+			pos.CFrame = CFrame.new(17.9421787, 4.0545454, -22.871954, 0.833403647, -5.25638804e-08, 0.552664816, 7.0266859e-09, 1, 8.45138217e-08, -0.552664816, -6.65507258e-08, 0.833403647)
+			wait(0.1)
+			pos.CFrame = CFrame.new(18.0790462, 4.0545454, -62.863163, 0.838907301, -4.05326936e-08, 0.544274271, 2.60941002e-09, 1, 7.04491185e-08, -0.544274271, -5.76800439e-08, 0.838907301)
+			wait(0.1)
+			pos.CFrame = CFrame.new(18.241024, 4.0545454, -102.574257, 0.528542697, -5.99462808e-08, -0.848906696, -5.28954081e-09, 1, -7.3909213e-08, 0.848906696, 4.3554504e-08, 0.528542697)
+			wait(0.1)
+			pos.CFrame = CFrame.new(19.5745869, 4.0545454, -142.167496, -0.648737133, 2.11879247e-09, -0.761012554, -2.50187027e-09, 1, 4.91693442e-09, 0.761012554, 5.09375253e-09, -0.648737133)
+			wait(0.1)
+			pos.CFrame = CFrame.new(19.9818592, 4.05454826, -182.815247, 0.990836978, -2.28092567e-08, -0.13506341, 2.49467913e-08, 1, 1.41337022e-08, 0.13506341, -1.73735941e-08, 0.990836978)
+			wait(0.1)
+			pos.CFrame = CFrame.new(17.0742168, 3.95454717, -223.347626, -0.490675569, -4.4979938e-08, 0.871342361, -2.72736411e-08, 1, 3.62629322e-08, -0.871342361, -5.9713452e-09, -0.490675569)
+			wait(0.1)
+			pos.CFrame = CFrame.new(16.7769508, 22.0335026, -257.314819, -0.305279166, 0.497483373, -0.811982095, -6.41613696e-09, 0.852686882, 0.522422314, 0.952262878, 0.159484655, -0.26030755)
+			wait(1)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+			wait(3)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+			wait(3)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+			wait(3)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+			wait(3)
+		end
 	end)
-	
-	-- Please give credit, Thanks. :)
-end 
-coroutine.wrap(GFQTS_fake_script)()
