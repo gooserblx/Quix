@@ -6,6 +6,10 @@ if game.PlaceId == 7009987220 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/gooserblx/Quix/main/RagdollStack"))()
 end
 
-if game.PlaceId == not 7009987220 or 8603729161 then
+if game.PlaceId == not 7009987220 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gooserblx/Quix/main/Universal"))()
+end
+
+if game.PlaceId == not 8603729161 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/gooserblx/Quix/main/Universal"))()
 end
