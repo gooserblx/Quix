@@ -1,0 +1,73 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Tower Of Jump! - QuixHub", "Ocean")
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+local Universal = Window:NewTab("Universal")
+local UniversalSection = Universal:NewSection("Universal")
+local Settings = Window:NewTab("Settings")
+local SettingsSection = Settings:NewSection("Settings")
+	UniversalSection:NewSlider("Walk Speed", "Will change your walkspeed.", 500, 1, function(s) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+	end)
+	UniversalSection:NewSlider("Jump Power", "Will change your JumpPower.", 500, 1, function(j) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
+	end)
+	_G.infinjump = false
+
+	local Player = game:GetService("Players").LocalPlayer
+	local Mouse = Player:GetMouse()
+	Mouse.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+				local Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+				Humanoid:ChangeState("Jumping")
+				wait(0.1)
+				Humanoid:ChangeState("Seated")
+			end
+		end
+	end)
+	
+	UniversalSection:NewToggle("Infinite Jump", "Lets you fly by jumping.", function(state)
+		if state then
+			_G.infinjump = true
+		else
+			_G.infinjump = false
+		end
+	end)
+-- Main
+
+MainSection:NewButton("TP to the top.", "Teleports you the top.", function()
+    local pos = game.Players.LocalPlayer.Character.HumanoidRootPart
+    pos.CFrame = CFrame.new(32.0309143, 219.230957, 141.967636, -0.999998629, 1.58445757e-09, -0.00166521128, 1.81802018e-09, 1, -1.40258564e-07, 0.00166521128, -1.40261392e-07, -0.999998629)
+end)
+
+MainSection:NewLabel("Teleports")
+
+MainSection:NewButton("Teleport To Winner Room.", "Teleports you the top.", function()
+    local pos = game.Players.LocalPlayer.Character.HumanoidRootPart
+    pos.CFrame = CFrame.new(-38445.5, 391.000031, 0.821154594, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+MainSection:NewLabel("Visuals")
+
+MainSection:NewTextBox("Add fake wins", "Adds fake wins to your account", function(txt)
+	print(txt, "wins added")
+    local plr = game.Players.LocalPlayer
+    local wins =  plr.leaderstats.Wins
+
+    wins.Value += txt
+end)
+
+
+-- Settings
+
+SettingsSection:NewKeybind("Toggle UI", "Can hide and show UI, tap to edit the keybind.", Enum.KeyCode.RightAlt, function()
+	Library:ToggleUI()
+end)
+
+SettingsSection:NewLabel("Main Keybinds")
+
+SettingsSection:NewKeybind("TP To Top Keybind", "Will TP you to the top on press, tap to edit the keybind.", Enum.KeyCode.RightControl, function()
+	local pos = game.Players.LocalPlayer.Character.HumanoidRootPart
+    pos.CFrame = CFrame.new(32.0309143, 219.230957, 141.967636, -0.999998629, 1.58445757e-09, -0.00166521128, 1.81802018e-09, 1, -1.40258564e-07, 0.00166521128, -1.40261392e-07, -0.999998629)
+end)
