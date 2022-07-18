@@ -156,6 +156,6 @@ MainSection:NewButton("Ragdoll Farm", "Will get you 100 Ragdolls to not make you
     for count = 1,100 do
         print(count, "out of 100 ragdolls farmed")
         game.Players.LocalPlayer.Character.Humanoid.Health = 0 
-        wait(2)
+        wait(3)
     end
 end)
