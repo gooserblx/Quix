@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Ragdoll Stack! - QuixHub", "Ocean")
+local Window = Library.CreateLib("Ragdoll Stack! - V1.1 - QuixHub", "Ocean")
 local Main = Window:NewTab("Main")
 local MainSection = Main:NewSection("Main")
 local Universal = Window:NewTab("Universal")
@@ -114,6 +114,7 @@ end)
 
 -- main stuff	
 
+
 MainSection:NewButton("Autofarm", "Autofarm with anti-afk!", function()
     for count = 1,math.huge do
         print(count, "wins farmed total")
@@ -148,5 +149,13 @@ MainSection:NewButton("Autofarm", "Autofarm with anti-afk!", function()
         wait(3)
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
         wait(3)
+    end
+end)
+
+MainSection:NewButton("Ragdoll Farm", "Will get you 100 Ragdolls to not make you lose wins.", function()
+    for count = 1,100 do
+        print(count, "out of 100 ragdolls farmed")
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+        wait(2)
     end
 end)
