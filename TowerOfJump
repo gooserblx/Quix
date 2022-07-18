@@ -9,9 +9,7 @@ local SettingsSection = Settings:NewSection("Settings")
 	UniversalSection:NewSlider("Walk Speed", "Will change your walkspeed.", 500, 1, function(s) -- 500 (MaxValue) | 0 (MinValue)
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 	end)
-	UniversalSection:NewSlider("Jump Power", "Will change your JumpPower.", 500, 1, function(j) -- 500 (MaxValue) | 0 (MinValue)
-		game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
-	end)
+	UniversalSection:NewLabel("Jump Power Changer is disabled in this game.")
 	_G.infinjump = false
 
 	local Player = game:GetService("Players").LocalPlayer
