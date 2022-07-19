@@ -9,3 +9,7 @@ end
 if game.PlaceId == 7211666966 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/gooserblx/Quix/main/TowerOfJump"))()
 end
+
+if game.PlaceId == 537413528 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gooserblx/Quix/main/BuildABoat"))()
+end
