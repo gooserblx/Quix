@@ -1,0 +1,64 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Ragdoll Engine Trolling Gui - QuixHub", "Ocean")
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+local Teleports = Window:NewTab("Teleports")
+local TPSection = Teleports:NewSection("Teleports")
+
+-- main section
+
+MainSection:NewSlider("Walk Speed", "Will edit your walkspeed.", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+MainSection:NewButton("Reset Speed", "Will reset your speed.", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+MainSection:NewSlider("Jump Power", "Will edit your Jump power.", 500, 50, function(j) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
+end)
+
+MainSection:NewButton("Reset Jump Power", "Will reset your jump power.", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+	_G.infinjump = false
+
+	local Player = game:GetService("Players").LocalPlayer
+	local Mouse = Player:GetMouse()
+	Mouse.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+				local Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+				Humanoid:ChangeState("Jumping")
+				wait(0.1)
+				Humanoid:ChangeState("Seated")
+			end
+		end
+	end)
+	
+MainSection:NewLabel("More")
+
+	MainSection:NewToggle("Infinite Jump", "Lets you fly by jumping.", function(state)
+		if state then
+			_G.infinjump = true
+		else
+			_G.infinjump = false
+		end
+	end)
+
+-- teleports section
+
+TPSection:NewDropdown("Area teleport", "Will teleport you to selected area.", {"Top of tower", "Top of escalator", "Top of giant staircase"}, function(currentOption)
+    print(currentOption)
+    if currentOption == "Top of tower" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(157.5369415283203, 1034.197265625, -191.49270629882812)
+    end
+    if currentOption == "Top of escalator" then
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-215.5607147216797, 86.99903106689453, -223.7373504638672)
+    end
+    if currentOption == "Top of giant staircase" then
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(147.7274627685547, 829.9999389648438, -346.2275085449219)
+    end
+end)
