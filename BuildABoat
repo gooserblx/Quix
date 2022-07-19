@@ -2,11 +2,40 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("Build A Boat For Treasure! - QuixHub", "Ocean")
 -- tabs
 local Main = Window:NewTab("Main")
-local MainSection = Main:NewSection("Main")
+local MainSection = Main:NewSection("Farms")
+local Universal = Window:NewTab("Universal")
+local UniversalSection = Universal:NewSection("Universal")
 
-MainSection:NewLabel("Farms")
+UniversalSection:NewSlider("Walk Speed", "Will change your walkspeed.", 500, 1, function(s) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+	end)
+	UniversalSection:NewSlider("Jump Power", "Will change your JumpPower.", 500, 1, function(j) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
+	end)
+	_G.infinjump = false
 
-MainSection:NewButton("Autofarm Gold", "yes", function()
+	local Player = game:GetService("Players").LocalPlayer
+	local Mouse = Player:GetMouse()
+	Mouse.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+				local Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+				Humanoid:ChangeState("Jumping")
+				wait(0.1)
+				Humanoid:ChangeState("Seated")
+			end
+		end
+	end)
+	
+	UniversalSection:NewToggle("Infinite Jump", "Lets you fly by jumping.", function(state)
+		if state then
+			_G.infinjump = true
+		else
+			_G.infinjump = false
+		end
+	end)
+
+MainSection:NewButton("Gold Farm", "Will farm lots of gold. you dont have to press any button after this.", function()
     print("Clicked")
     for count = 1,math.huge do
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-24.913249969482422, 102.4762191772461, 1483.18017578125)
