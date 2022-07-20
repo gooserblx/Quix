@@ -14,6 +14,6 @@ if game.PlaceId == 537413528 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/gooserblx/Quix/main/BuildABoat"))()
 end
 
-if game.PlaceId == 5683833663 or 9848789324 then
+if game.PlaceId == 9848789324 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/gooserblx/Quix/main/RagdollEngine"))()
 end
